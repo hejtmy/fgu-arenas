@@ -1,20 +1,42 @@
-load_experiment <- function(filepath){
+#' Title
+#'
+#' @param folder 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+load_session <- function(folder){
+  files <- list.files(folder, pattern = "*.dat", full.names = TRUE)
   out <- list()
-  out$header <- read_header(filepath)
-  out$data <- read_data(filepath)
+  for(i in 1:length(files)){
+     out[[i]] <- load_trial(files[i])
+  }
   return(out)
 }
 
-load_header <- function(){
-  
+#' Title
+#'
+#' @param filepath 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+load_trial <- function(filepath){
+  out <- list()
+  out$header <- read_header(filepath)
+  out$data <- read_data(filepath)
+  out <- as.navr(out)
+  return(out)
 }
 
 read_data <- function(filepath){
   i_last_header <- get_last_header_row(filepath)
-  out <- read.table(filepath, skip = i_last_header)
-  colnames(out) <- c("FrameCount", "1msTimeStamp", "RoomX", "RoomY", "Sectors",
-                     "State", "Flags", "FrameInfo")
-  return(out)
+  df <- read.table(filepath, skip = i_last_header)
+  colnames(df) <- c("frame", "timestamp", "position_x", "position_y", "sectors",
+                     "state", "flags", "frameinfo")
+  return(df)
 }
 
 

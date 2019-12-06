@@ -1,0 +1,26 @@
+---
+title: "Session report"
+author: "Lukáš 'hejtmy' Hejtmánek"
+date: "06/12/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(morris)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = normalizePath(".."))
+```
+
+```{r}
+session <- load_session("example-data/LY/LY_SWIM1/")
+```
+
+```{r, warning=FALSE, message=FALSE, results='asis', echo=FALSE}
+for(e in 1:length(session)){
+  header <- paste0("<h2>Trial ", e, "</h2>")
+  cat (header)
+  cat("<p></p>")
+  print(plot_trial(session[[e]]))
+  cat("<p></p>")
+}
+```
