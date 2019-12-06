@@ -1,12 +1,15 @@
-load_experiment <- function(){
-  
+load_experiment <- function(filepath){
+  out <- list()
+  out$header <- read_header(filepath)
+  out$data <- read_data(filepath)
+  return(out)
 }
 
 load_header <- function(){
   
 }
 
-load_data <- function(filepath){
+read_data <- function(filepath){
   i_last_header <- get_last_header_row(filepath)
   out <- read.table(filepath, skip = i_last_header)
   colnames(out) <- c("FrameCount", "1msTimeStamp", "RoomX", "RoomY", "Sectors",
