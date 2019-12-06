@@ -1,0 +1,125 @@
+%%BEGIN_HEADER
+	%%BEGIN DATABASE_INFORMATION
+		%Date.0 ( 16.10.2019 )
+		%Time.0 ( 12:27 )
+	%%END DATABASE_INFORMATION
+	%%BEGIN SETUP_INFORMATION
+		%TrackerVersion.0 ( Tracker version 2.38 release 12.8.2012 )
+		%ElapsedTime_ms.0 ( 3911 )
+		%Paradigm.0 ( PlacePreference )
+		%FeederParameters.0 ( 1500 0 )
+			// %FeederParameters.0 ( ENTRANCE_LATENCY EXIT_LATENCY )
+		%ElapsedPath_m.0 ( 0.00 )
+		%ArenaDiameter_m.0 ( 1.80 )
+		%TrackerResolution_PixPerCM.0 ( 1.4222 )
+		%ArenaCenterXY.0 ( 127.5 127.5 )
+		%Frame.0 ( RoomFrame )
+		%ReinforcedSector.0 ( 64.3907 64.3907 7 )
+			//%ReinforcedSector.0 ( CENTER_X CENTER_Y RADIUS )
+		%RoomTrackReinforcedSector.0 ( 64.3907 64.3907 7 )
+			//%RoomTrackReinforcedSector.0 ( CENTER_X CENTER_Y RADIUS )
+	%%END SETUP_INFORMATION
+	%%BEGIN RECORD_FORMAT
+		%Sample.0 ( FrameCount 1msTimeStamp RoomX RoomY Sectors State Flags FrameInfo )
+			//Sectors indicate if the object is in a target. Number is binary coded. Sectors = 0: no target, Sectors = 1: room target, Sectors: = 2 arena target, Sectors: = 3 room and arena target
+			////State indicates the Watermaze State: OutsideTarget = 0, EntranceLatency = 1, InsideTarget = 3, OutsideRefractory = 4, BadSpot = 5
+			//FrameInfo indicates succesfuly tracked spots: ReferencePoint * 2^0 + Spot0 * 2^(1+0) + Spot1 * 2^(1+1) + Spot2 * 2^(1+2) .... 
+	%%END RECORD_FORMAT
+%%END_HEADER
+1	71	41	207	0	0	*	2
+2	111	39	206	0	0	*	2
+3	151	39	205	0	0	*	2
+4	191	38	204	0	0	*	2
+5	231	38	203	0	0	*	2
+6	271	38	202	0	0	*	2
+7	311	38	201	0	0	*	2
+8	351	38	200	0	0	*	2
+9	391	37	199	0	0	*	2
+10	431	38	198	0	0	*	2
+11	471	38	197	0	0	*	2
+12	511	39	196	0	0	*	2
+13	551	39	195	0	0	*	2
+14	591	39	194	0	0	*	2
+15	631	39	192	0	0	*	2
+16	671	39	190	0	0	*	2
+17	711	38	188	0	0	*	2
+18	751	38	186	0	0	*	2
+19	791	39	184	0	0	*	2
+20	831	39	181	0	0	*	2
+21	871	39	178	0	0	*	2
+22	911	40	175	0	0	*	2
+23	951	40	173	0	0	*	2
+24	991	41	170	0	0	*	2
+25	1031	42	167	0	0	*	2
+26	1071	43	164	0	0	*	2
+27	1111	44	162	0	0	*	2
+28	1151	45	160	0	0	*	2
+29	1191	46	156	0	0	*	2
+30	1231	47	154	0	0	*	2
+31	1271	48	151	0	0	*	2
+32	1311	49	148	0	0	*	2
+33	1351	49	145	0	0	*	2
+34	1391	50	142	0	0	*	2
+35	1431	51	139	0	0	*	2
+36	1471	52	136	0	0	*	2
+37	1511	53	133	0	0	*	2
+38	1551	53	130	0	0	*	2
+39	1591	54	127	0	0	*	2
+40	1631	55	124	0	0	*	2
+41	1671	56	121	0	0	*	2
+42	1711	56	119	0	0	*	2
+43	1751	57	115	0	0	*	2
+44	1791	58	112	0	0	*	2
+45	1831	59	109	0	0	*	2
+46	1871	59	106	0	0	*	2
+47	1911	60	99	0	0	*	2
+48	1951	60	101	0	0	*	2
+49	1991	61	92	0	0	*	2
+50	2031	61	94	0	0	*	2
+51	2071	62	87	0	0	*	2
+52	2111	62	88	0	0	*	2
+53	2151	62	83	0	0	*	2
+54	2191	63	78	0	0	*	2
+55	2231	62	81	0	0	*	2
+56	2271	63	78	0	0	*	2
+57	2311	63	76	0	0	*	2
+58	2351	63	74	0	0	*	2
+59	2391	64	73	0	1	*	2
+60	2431	64	71	0	1	*	2
+61	2471	64	70	0	1	*	2
+62	2511	64	70	0	1	*	2
+63	2551	64	70	0	1	*	2
+64	2591	64	70	0	1	*	2
+65	2631	63	68	0	1	*	2
+66	2671	63	66	0	1	*	2
+67	2711	64	64	0	1	*	2
+68	2751	64	63	0	1	*	2
+69	2791	64	63	0	1	*	2
+70	2831	64	62	0	1	*	2
+71	2871	65	61	0	1	*	2
+72	2911	65	60	0	1	*	2
+73	2951	66	60	0	1	*	2
+74	2991	66	59	0	1	*	2
+75	3031	67	59	0	1	*	2
+76	3071	67	59	0	1	*	2
+77	3111	67	59	0	1	*	2
+78	3151	67	60	0	1	*	2
+79	3191	66	60	0	1	*	2
+80	3231	66	60	0	1	*	2
+81	3271	66	61	0	1	*	2
+82	3311	65	61	0	1	*	2
+83	3351	65	61	0	1	*	2
+84	3391	64	61	0	1	*	2
+85	3431	64	61	0	1	*	2
+86	3471	63	61	0	1	*	2
+87	3511	63	61	0	1	*	2
+88	3551	62	62	0	1	*	2
+89	3591	62	62	0	1	*	2
+90	3631	62	61	0	1	*	2
+91	3671	61	61	0	1	*	2
+92	3711	61	61	0	1	*	2
+93	3751	61	61	0	1	*	2
+94	3791	60	62	0	1	*	2
+95	3831	60	62	0	1	*	2
+96	3871	60	62	0	1	*	2
+97	3911	60	62	0	3	*	2
