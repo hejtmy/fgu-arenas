@@ -24,26 +24,41 @@ SECTION_END <- "\\s+%%END\\s+"
 
 read_header <- function(filepath){
   txt <- readLines(filepath, get_last_header_row(filepath))
-  i_sections_start <- get_section_beginnings(txt)
+  section_names <- get_section_names(txt)
   out <- list()
-  for(i_start in i_section_starts){
-    read_section(txt, i_start)
+  for(section_name in section_names){
+    sec <- read_section(txt, section_name)
+    out[[section_name]] <- sec
   }
   return(out)
 }
 
-read_section <- function(txt, i_start){
-  section_name <- get_section_name(txt[i_start])
+read_section <- function(txt, section_name){
   i_section <- get_section_indices(txt, section_name)
+  txt_section <- txt[(i_section[1] + 1):(i_section[2] - 1)]
+  out <- list()
+  for(line in txt_section){
+    if(!grepl("\\s+%(.*)\\s+\\((.*)\\)", line)) next
+    if(grepl("\\s+/", line)) next #skipping \\parameters
+    name <- gsub("\\s+%(.*)\\s+\\((.*)\\)", "\\1", line)
+    name <- gsub("\\.[0-9]$", "", name) #removing the .0
+    value <- gsub("\\s+%(.*)\\s+\\((.*)\\)", "\\2", line)
+    value <- gsub("^\\s|\\s$", "", value) #striping whitestpace fomr the beginning or end
+    out[[name]] <- value 
+  }
+  return(out)
 }
 
 get_section_beginnings <- function(txt){
   return(grep(SECTION_BEGINNING, txt))
 }
 
-get_section_name <- function(section_row){
+get_section_names <- function(txt){
   ptr <- paste0(SECTION_BEGINNING, "(.*)")
-  return(gsub(ptr, "\\1", section_row))
+  section_rows <- txt[grep(ptr, txt)]
+  section_names <- sapply(section_rows, function(x){gsub(ptr, "\\1", x)}, 
+                          simplify = TRUE, USE.NAMES = FALSE)
+  return(section_names)
 }
 
 get_section_indices <- function(txt, section_name){
