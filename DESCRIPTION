@@ -1,0 +1,20 @@
+Package: morris
+Title: Loading, preprocessing and visualising logs from FGU morris water maze
+Version: 0.1.0
+Authors@R: person("Lukas", "Hejtmanek", email = "hejtmy@gmail.com",
+                  role = c("aut", "cre"))
+Description: 
+License: MIT
+LazyData: true
+Remotes:
+  hejtmy/navr
+Depends:
+  R (>= 3.1.0),
+  navr
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown,
+    covr
+RoxygenNote: 6.1.1
+VignetteBuilder: knitr
