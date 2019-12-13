@@ -2,4 +2,6 @@
 
 export(load_session)
 export(load_trial)
+export(plot_heatmap.session)
+export(plot_heatmap.trial)
 export(plot_trial)

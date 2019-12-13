@@ -9,18 +9,23 @@ output: html_document
 library(morris)
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = normalizePath(".."))
+BASE_PATH <- "example-data"
 ```
 
 ```{r}
-session <- load_session("example-data/LY/LY_SWIM1/")
+conditions <- list.dirs(BASE_PATH, recursive = FALSE)
 ```
 
 ```{r, warning=FALSE, message=FALSE, results='asis', echo=FALSE}
-for(e in 1:length(session)){
-  header <- paste0("<h2>Trial ", e, "</h2>")
+for(condition in conditions){
+  header <- paste0("<h2>CONDITION ", condition, "</h2>")
   cat (header)
   cat("<p></p>")
-  print(plot_trial(session[[e]]))
+  for(session_path in list.dirs(condition, recursive = FALSE)){
+    cat("<h4>", basename(session_path), "</h4>")
+    session <- load_session(session_path)
+    print(plot_heatmap.session(session))
+  }
   cat("<p></p>")
 }
 ```

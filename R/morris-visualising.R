@@ -14,6 +14,14 @@ plot_trial <- function(obj){
   return(plt)
 }
 
+#' Title
+#'
+#' @param session 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_heatmap.session <- function(session){
   # Combining objects
   obj <- combine_data_from_session(session)
@@ -21,6 +29,14 @@ plot_heatmap.session <- function(session){
   return(plt)
 }
 
+#' Title
+#'
+#' @param obj 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_heatmap.trial <- function(obj){
   plt <- ggplot(obj$data, aes(position_x, position_y)) + 
     stat_density2d(aes(fill=..level..), bins = 100, geom="polygon") + 
