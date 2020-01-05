@@ -14,6 +14,15 @@ as.navr <- function(obj_morris){
   return(obj)
 }
 
+#' Combines data from multiple trials into a single navr object
+#'
+#' @param session session object as loaded by load_session
+#'
+#' @return single navr object with all position data together. 
+#' Adds an iTrial column into the data for each separate trial. Strips away the settings
+#' @export
+#'
+#' @examples
 combine_data_from_session <- function(session){
   df <- data.frame()
   for(i in 1:length(session)){

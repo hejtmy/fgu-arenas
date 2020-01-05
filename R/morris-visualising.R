@@ -29,11 +29,11 @@ plot_heatmap.session <- function(session){
   return(plt)
 }
 
-#' Title
+#' Plots a single trial heatmap
 #'
-#' @param obj 
+#' @param obj navr object as loaded by load_trial or from load_session
 #'
-#' @return
+#' @return ggplot heatmap
 #' @export
 #'
 #' @examples
