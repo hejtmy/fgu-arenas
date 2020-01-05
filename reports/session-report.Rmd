@@ -25,13 +25,16 @@ for(condition in conditions){
     cat("<h4>", basename(session_path), "</h4>")
     session <- load_session(session_path)
     cat('<div class="row">')
-    cat('<div class=">')
+    cat('<div class="col-md-12">')
     print(plot_heatmap.session(session))
     cat('</div>')
     cat('</div>')
     cat('<div class="row">')
-    cat('<div class="">')
-    cat('</div>')
+    for(i in 1:length(session)){
+      cat('<div class="col-md-4">')
+      print(plot_trial(session[[i]]))
+      cat('</div>')
+    }
     cat('</div>')
   }
   cat("<p></p>")
