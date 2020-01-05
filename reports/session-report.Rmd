@@ -24,7 +24,15 @@ for(condition in conditions){
   for(session_path in list.dirs(condition, recursive = FALSE)){
     cat("<h4>", basename(session_path), "</h4>")
     session <- load_session(session_path)
+    cat('<div class="row">')
+    cat('<div class=">')
     print(plot_heatmap.session(session))
+    cat('</div>')
+    cat('</div>')
+    cat('<div class="row">')
+    cat('<div class="">')
+    cat('</div>')
+    cat('</div>')
   }
   cat("<p></p>")
 }
