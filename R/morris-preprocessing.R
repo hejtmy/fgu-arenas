@@ -1,3 +1,11 @@
+#' Converts the morris object to a navr object for easy plotting of paths and heatmaps
+#'
+#' @param obj_morris 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 as.navr <- function(obj_morris){
   obj <- NavrObject()
   obj <- load_position_data(obj, obj_morris$data)

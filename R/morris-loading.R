@@ -1,8 +1,8 @@
-#' Title
+#' Loads all data from a single folder into a session object
 #'
-#' @param folder 
+#' @param folder folder with multiple *.dat files
 #'
-#' @return
+#' @return session object list
 #' @export
 #'
 #' @examples
@@ -12,14 +12,15 @@ load_session <- function(folder){
   for(i in 1:length(files)){
      out[[i]] <- load_trial(files[i])
   }
+  class(out) <- append(class(out), "session")
   return(out)
 }
 
-#' Title
+#' Loads a single *.dat file into a single navr object
 #'
-#' @param filepath 
+#' @param filepath path to a valid *.dat file to load
 #'
-#' @return
+#' @return navr object
 #' @export
 #'
 #' @examples
@@ -31,6 +32,16 @@ load_trial <- function(filepath){
   return(out)
 }
 
+
+#' Reads data into a unprocessed data.frame
+#' 
+#' @description unlike the load_trial, the loaded data is without the settings portion and not converted to the navr object
+#' @param filepath path to a valid *.dat file
+#'
+#' @return data.frame
+#' @export
+#'
+#' @examples
 read_data <- function(filepath){
   i_last_header <- get_last_header_row(filepath)
   df <- read.table(filepath, skip = i_last_header)
@@ -38,7 +49,6 @@ read_data <- function(filepath){
                      "state", "flags", "frameinfo")
   return(df)
 }
-
 
 # HELPERS -----
 

@@ -1,8 +1,8 @@
-#' Title
+#' Plots a single trial with animal's path
 #'
-#' @param obj 
+#' @param obj navr object
 #'
-#' @return
+#' @return ggplot object
 #' @export
 #'
 #' @examples
@@ -14,9 +14,9 @@ plot_trial <- function(obj){
   return(plt)
 }
 
-#' Title
+#' Plots combined heatmap from multiple trials
 #'
-#' @param session 
+#' @param session session object as loaded by load_session
 #'
 #' @return
 #' @export
