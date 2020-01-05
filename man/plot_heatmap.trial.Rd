@@ -2,13 +2,16 @@
 % Please edit documentation in R/morris-visualising.R
 \name{plot_heatmap.trial}
 \alias{plot_heatmap.trial}
-\title{Title}
+\title{Plots a single trial heatmap}
 \usage{
 plot_heatmap.trial(obj)
 }
 \arguments{
-\item{obj}{}
+\item{obj}{navr object as loaded by load_trial or from load_session}
+}
+\value{
+ggplot heatmap
 }
 \description{
-Title
+Plots a single trial heatmap
 }

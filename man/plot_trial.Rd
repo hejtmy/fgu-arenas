@@ -2,13 +2,16 @@
 % Please edit documentation in R/morris-visualising.R
 \name{plot_trial}
 \alias{plot_trial}
-\title{Title}
+\title{Plots a single trial with animal's path}
 \usage{
 plot_trial(obj)
 }
 \arguments{
-\item{obj}{}
+\item{obj}{navr object}
+}
+\value{
+ggplot object
 }
 \description{
-Title
+Plots a single trial with animal's path
 }

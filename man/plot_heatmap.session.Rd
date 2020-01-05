@@ -2,13 +2,13 @@
 % Please edit documentation in R/morris-visualising.R
 \name{plot_heatmap.session}
 \alias{plot_heatmap.session}
-\title{Title}
+\title{Plots combined heatmap from multiple trials}
 \usage{
 plot_heatmap.session(session)
 }
 \arguments{
-\item{session}{}
+\item{session}{session object as loaded by load_session}
 }
 \description{
-Title
+Plots combined heatmap from multiple trials
 }

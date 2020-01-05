@@ -2,13 +2,16 @@
 % Please edit documentation in R/morris-loading.R
 \name{load_trial}
 \alias{load_trial}
-\title{Title}
+\title{Loads a single *.dat file into a single navr object}
 \usage{
 load_trial(filepath)
 }
 \arguments{
-\item{filepath}{}
+\item{filepath}{path to a valid *.dat file to load}
+}
+\value{
+navr object
 }
 \description{
-Title
+Loads a single *.dat file into a single navr object
 }
