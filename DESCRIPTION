@@ -1,4 +1,4 @@
-Package: morris
+Package: fgu.morris
 Title: Loading, preprocessing and visualising logs from FGU morris water maze
 Version: 0.1.0
 Authors@R: person("Lukas", "Hejtmanek", email = "hejtmy@gmail.com",
